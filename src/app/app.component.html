@@ -1,0 +1,83 @@
+<router-outlet></router-outlet>
+<nav class="navbar navbar-light ">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: azure; text-shadow: 2px 2px 3px black; font-size: 3vw; font-family: 'Bangers', cursive;"> <span style="color: rgb(251, 38, 0);">The </span>  Hub</a>
+    <h1 style="color: aliceblue; font-family: 'Bangers', cursive; text-shadow: 2px 2px 3px black; font-size: 3vw;">Eudes <span style="color: rgb(251, 38, 0);"> Carbon</span></h1>
+  </div>
+</nav>
+
+
+
+<div class="container">
+  <div class="text-center" style="color: rgb(251, 38, 0); text-shadow: 2px 3px 3px red;">
+    <h1 style="font-size: 7vw; font-family: 'Bangers', cursive;">Welcome to the Hub </h1>
+    <p style="font-size: 2vw; color: aliceblue; font-family: 'Tangerine', cursive;">By Carbon</p>
+  </div>
+
+</div>
+
+
+
+<div class="container text-center">
+  <!-- <h1 style="font-size: 3vw; font-family: 'Bangers', cursive;">Discover</h1> -->
+  <p style="font-size: 3vw;color: azure; text-shadow: 2px 3px 3px black; font-family: 'Tangerine', cursive;">
+    Keep intouch, interact, view and share insights and projects with your github followers and teammates!
+  </p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mt-4">
+        <div class="text-center">
+          <button type="button" class="btn btn-danger btn-rounded" style="border-radius: 20px; height: 8vh; font-family: 'Bangers', cursive; font-size: 1.2vw; text-shadow: 2px 3px 3px black;">Search for your friend in github</button>
+        </div>
+        <div class="container mt-3"  style="width: 16vw;">
+          <form class="d-flex input-group w-auto md-form form-sm active-cyan-2" >
+            <input
+              type="search"
+              class="form-control rounded"
+              name="username"
+              placeholder="Search"
+              [(ngModel)]="username" (keyup)="findProfile()"
+              aria-label="Search"
+              aria-describedby="search-addon"
+              style="font-family: 'Bangers', cursive; height: 5vh; margin-right: 6px;"/>
+            <span class="input-group-text border-0 " id="search-addon" style="color: rgb(0, 0, 0);">
+            </span>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="card col-md-6" style="width: 18rem;">
+            <ul class="list-group list-group-flush text-left">
+              <li class="list-group-item car-1"><span class="then">User :</span>  <span class="car">{{profile.name}}</span></li>
+              <li class="list-group-item car-1"><span class="then">Repos :</span> <span class="car">{{profile.public_repos}}</span></li>
+              <li class="list-group-item car-1"><span class="then">followers :</span> <span class="car">{{profile.followers}}</span></li>
+              <li class="list-group-item car-1"><span class="then">following :</span> <span class="car">{{profile.following}}</span></li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <img
+            src="{{profile.avatar_url}}"
+            class="img-fluid rounded"
+            alt=""/>
+            <a href="{{profile.html_url}}" target="_blank" style="border-radius: 20px; height: 6vh; font-family: 'Bangers', cursive; font-size: 1vw; text-shadow: 2px 3px 3px black;" class=" view  btn btn-danger">  View in Github</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h2 class="then" style="text-shadow: 1px 2px 3px rgb(0, 0, 0); color: aliceblue;">{{profile.bio}}</h2>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
